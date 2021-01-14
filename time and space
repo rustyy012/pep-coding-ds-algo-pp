@@ -1,1 +1,110 @@
+// BUBBLE SORT
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static void bubbleSort(int[] arr) {
+        for (int x = 1; x <= arr.length - 1; x++) {
+            for (int j = 0; j <= arr.length - 1 - x; j++) {
+                if (isSmaller(arr, j + 1, j)) {
+                    swap(arr, j + 1, j);
+                }
+            }
+        }
+    }
+    // used for swapping ith and jth elements of array
+    public static void swap(int[] arr, int i, int j) {
+        System.out.println("Swapping " + arr[i] + " and " + arr[j]);
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    // return true if ith element is smaller than jth element
+    public static boolean isSmaller(int[] arr, int i, int j) {
+        System.out.println("Comparing " + arr[i] + " and " + arr[j]);
+        if (arr[i] < arr[j]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static void print(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scn.nextInt();
+        }
+        bubbleSort(arr);
+        print(arr);
+    }
+}
+
+//SELECTION SORT
+public static void selectionSort(int[] arr) {
+        for(int i=0;i<=arr.length-2;i++){
+            int minidx = i;
+            for(int j=i+1;j<arr.length;j++){
+                if(isSmaller(arr,j,minidx)){
+                    minidx = j;
+                }               
+            }
+            swap(arr,i,minidx);
+        }
+    }
+    
+  //Insertion sort
+  
+  public static void insertionSort(int[] arr) {
+        for(int i=1;i<=arr.length-1;i++){
+            for(int j=i-1;j>=0;j--){
+                if(isGreater(arr,j,j+1) == true){
+                    swap(arr,j,j+1);
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+    
+   //SORT 01
+   public static void sort01(int[] arr) {
+        int i = 0;
+        int j = 0;
+ 
+        while(j<arr.length){
+            if(arr[j] == 1){
+                j++;
+            }else{
+                swap(arr,j,i);
+                i++;
+                j++;
+            }
+        }
+    }
+    
+ // SORT 012
+ // DUTCH NATIONAL ANTHEM
+ 
+ public static void sort012(int[] arr) {
+        int i = 0;
+        int j = 0;
+        int k = arr.length - 1;
+        while (j <= k) {
+            if (arr[j] == 1) {
+                j++;
+            } else if (arr[j] == 0) {
+                swap(arr, j, i);
+                i++;
+                j++;
+            } else {
+                swap(arr, j, k);
+                k--;
+            }
+        }
+    }
 
