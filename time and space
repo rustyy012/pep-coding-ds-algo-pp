@@ -88,7 +88,7 @@ public static void selectionSort(int[] arr) {
     }
     
  // SORT 012
- // DUTCH NATIONAL ANTHEM
+ // DUTCH NATIONAL flag
  
  public static void sort012(int[] arr) {
         int i = 0;
