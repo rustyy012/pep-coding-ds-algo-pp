@@ -107,4 +107,42 @@ public static void selectionSort(int[] arr) {
             }
         }
     }
+    
+//MERGE TWO SORTED ARRAYS
+public static int[] mergeTwoSortedArrays(int[] a, int[] b) {
+        int l = a.length + b.length;
+        int[] ans = new int[l];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        
+        while(i<a.length && j<b.length){
+            if(a[i]<=b[j]){
+                ans[k] = a[i];
+                k++;
+                i++;
+            }else{
+                ans[k] = b[j];
+                k++;
+                j++;
+            }
+        }
+        
+        if(i<a.length){
+            while(i<a.length){
+                ans[k] = a[i];
+                k++;
+                i++;
+            }
+        }
+        
+        if(j<b.length){
+            while(j<b.length){
+                ans[k] = b[j];
+                k++;
+                j++;
+            }
+        }
+        return ans;
+    }
 
