@@ -145,4 +145,22 @@ public static int[] mergeTwoSortedArrays(int[] a, int[] b) {
         }
         return ans;
     }
+    
+    //MERGE SORT 
+    public static int[] mergeSort(int[] arr, int lo, int hi) {
+        if(lo==hi){
+            int[] temparr = new int[1];
+            temparr[0] = arr[lo];
+            return temparr;
+        }
+        
+        int mid = (lo+hi)/2;
+        
+        int[] left = mergeSort(arr,lo,mid);
+        int[] right = mergeSort(arr,mid+1,hi);
+        
+        int[] leftpright = mergeTwoSortedArrays(left,right);
+
+        return leftpright;
+    }
 
